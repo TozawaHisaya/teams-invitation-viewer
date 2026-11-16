@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Teams Invitation Viewer",
+  "version": "0.1.8",
+  "description": "Teams 会議の ICS 日時を JST で表示",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "teams-viewer@local.invalid",
+      "strict_min_version": "151.0"
+    }
+  },
+  "permissions": [
+    "messagesRead",
+    "scripting",
+    "menus",
+    "messagesModify"
+  ],
+  "background": {
+    "scripts": [
+      "parser.js",
+      "extract.js",
+      "details.js",
+      "background.js"
+    ]
+  },
+  "message_display_action": {
+    "default_title": "Teams 招待日時を確認",
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "action": {
+    "default_title": "Teams 招待日時を確認",
+    "default_popup": "popup.html",
+    "default_icon": "icon.png",
+    "default_label": "Teams 日時"
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "message_display_scripts": [
+    {
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
